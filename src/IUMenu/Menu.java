@@ -2,7 +2,9 @@ package IUMenu;
 
 
 
+import Service.Desecnryption;
 import Service.Encryption;
+import Service.ManageFile;
 
 import java.util.Scanner;
 
@@ -32,7 +34,12 @@ public class Menu {
           switch (option){
               case 1:
                   System.out.println("Digite texto a encriptar");
-                  Encryption.encrypt();
+                  Encryption.SelectDocumentUser();
+              break;
+              case 2:
+                  System.out.println("Digite texto a desencriptar");
+                  Desecnryption.SelectDocumentUserDes();
+
 
           }
 
