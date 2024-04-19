@@ -1,9 +1,5 @@
 package IUMenu;
 
-
-
-import Service.Desecnryption;
-import Service.Encryption;
 import Service.ManageFile;
 
 import java.util.Scanner;
@@ -30,24 +26,27 @@ public class Menu {
               System.out.println("***********************");
               showMenu();
           }
-
           switch (option){
               case 1:
                   System.out.println("Digite texto a encriptar");
-                  Encryption.SelectDocumentUser();
-              break;
+                  ManageFile.SelectDocumentByUserToEncrypt();
+                  System.out.println("Operacion realizada gracias");
+                  option =3;
+                  break;
+
               case 2:
                   System.out.println("Digite texto a desencriptar");
-                  Desecnryption.SelectDocumentUserDes();
+                  ManageFile.SelectDocumentByUserToDecrypt();
+                  System.out.println("Operacion realizada gracias");
+                  option =3;
+                  break;
 
 
           }
 
-
-
-
-
       }while (option!=3);
+
+
 
 
 

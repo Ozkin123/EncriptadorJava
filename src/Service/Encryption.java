@@ -32,17 +32,6 @@ public class Encryption {
 
     }
 
-    public static void SelectDocumentUser(){
-        Scanner sc = new Scanner(System.in);
-        String selectedDocument;
-        try {
-            selectedDocument = sc.nextLine();
-            EncryptFile(selectedDocument);
-        }catch (Exception e){
-            System.out.println("no exixte documento");
-            System.out.println("digite nuevamente");
-            SelectDocumentUser();
-        }
-    }
+
 
 }

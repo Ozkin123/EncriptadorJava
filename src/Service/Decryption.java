@@ -3,10 +3,10 @@ package Service;
 import java.io.*;
 import java.util.Scanner;
 
-public class Desecnryption {
+public class Decryption {
 
 
-    public static void DesEncryptFile(String document) {
+    public static void DecryptFile(String document) {
         File file = new File(document);
         try(FileReader reader = new FileReader(file)){
             int height = (int)file.length();
@@ -27,16 +27,5 @@ public class Desecnryption {
 
     }
 
-    public static void SelectDocumentUserDes(){
-        Scanner sc = new Scanner(System.in);
-        String selectedDocument;
-        try {
-            selectedDocument = sc.nextLine();
-            DesEncryptFile(selectedDocument);
-        }catch (Exception e){
-            System.out.println("no exixte documento");
-            System.out.println("digite nuevamente");
-            SelectDocumentUserDes();
-        }
-    }
+
 }
