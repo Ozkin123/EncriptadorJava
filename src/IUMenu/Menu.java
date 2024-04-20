@@ -29,14 +29,14 @@ public class Menu {
           switch (option){
               case 1:
                   System.out.println("Digite texto a encriptar");
-                  ManageFile.SelectDocumentByUserToEncrypt();
+                  ManageFile.selectDocumentByUserToEncrypt();
                   System.out.println("Operacion realizada gracias");
                   option =3;
                   break;
 
               case 2:
                   System.out.println("Digite texto a desencriptar");
-                  ManageFile.SelectDocumentByUserToDecrypt();
+                  ManageFile.selectDocumentByUserToDecrypt();
                   System.out.println();
                   System.out.println();
                   System.out.println("Operacion realizada gracias");

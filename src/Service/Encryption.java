@@ -9,7 +9,7 @@ import Service.ManageFile;
 
 public class Encryption {
 
-    public static void EncryptFile(String document) {
+    public static void encryptFile(String document) {
         File file = new File(document);
         try(FileReader reader = new FileReader(file);
             FileWriter writer = new FileWriter("Encriptado.txt")){

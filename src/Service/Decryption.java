@@ -6,10 +6,9 @@ import java.util.Scanner;
 public class Decryption {
 
 
-    public static void DecryptFile(String document) {
+    public static void decryptFile(String document) {
         File file = new File(document);
-        try(FileReader reader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(reader)){
+        try(FileReader reader = new FileReader(file)){
             int length = (int)file.length();
             char[] buffer = new char[length];
             reader.read(buffer);

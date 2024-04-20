@@ -5,29 +5,29 @@ import java.util.Scanner;
 
 public class ManageFile {
 
-    public static void SelectDocumentByUserToEncrypt(){
+    public static void selectDocumentByUserToEncrypt(){
         Scanner sc = new Scanner(System.in);
         String selectedDocument;
         try {
             selectedDocument = sc.nextLine();
-            Encryption.EncryptFile(selectedDocument);
+            Encryption.encryptFile(selectedDocument);
         }catch (Exception e){
             System.out.println("no exixte documento");
             System.out.println("digite nuevamente");
-            SelectDocumentByUserToEncrypt();
+            selectDocumentByUserToEncrypt();
         }
     }
 
-    public static void SelectDocumentByUserToDecrypt(){
+    public static void selectDocumentByUserToDecrypt(){
         Scanner sc = new Scanner(System.in);
         String selectedDocument;
         try {
             selectedDocument = sc.nextLine();
-            Decryption.DecryptFile(selectedDocument);
+            Decryption.decryptFile(selectedDocument);
         }catch (Exception e){
             System.out.println("no exixte documento");
             System.out.println("digite nuevamente");
-            SelectDocumentByUserToDecrypt();
+            selectDocumentByUserToDecrypt();
         }
     }
 
