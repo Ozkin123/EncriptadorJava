@@ -14,10 +14,8 @@ public class Encryption {
         try(FileReader reader = new FileReader(file);
             FileWriter writer = new FileWriter("Encriptado.txt")){
             int length = (int)file.length();
-            char[] buffer = new char[length*4];
-            while (reader.ready()){
-                reader.read(buffer);
-            }
+            char[] buffer = new char[length];
+            reader.read(buffer);
 
             for (int i = 0; i <buffer.length ; i++) {
                 buffer[i]= (char) (buffer[i]+7);
