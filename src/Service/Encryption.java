@@ -13,8 +13,8 @@ public class Encryption {
         File file = new File(document);
         try(FileReader reader = new FileReader(file);
             FileWriter writer = new FileWriter("Encriptado.txt")){
-            int height = (int)file.length();
-            char[] buffer = new char[height*4];
+            int length = (int)file.length();
+            char[] buffer = new char[length*4];
             while (reader.ready()){
                 reader.read(buffer);
             }

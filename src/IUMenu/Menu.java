@@ -38,10 +38,8 @@ public class Menu {
                   System.out.println("Digite texto a desencriptar");
                   ManageFile.SelectDocumentByUserToDecrypt();
                   System.out.println("Operacion realizada gracias");
-                  option =3;
+                  option=3;
                   break;
-
-
           }
 
       }while (option!=3);
