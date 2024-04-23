@@ -32,7 +32,7 @@ public class Decryption {
     public static void decryptByBruteForce(String document) {
         File file = new File(document);
         try (FileReader reader = new FileReader(file)) {
-            int iteratorBruteForce=2;
+            int iteratorBruteForce=1;
             int length = (int) file.length();
             char[] buffer = new char[length];
             reader.read(buffer);
@@ -46,10 +46,13 @@ public class Decryption {
                 }
 
                 String [] blocktoCompare=block.split(" ");
-                if(DBCommonsWords.CompareWords(blocktoCompare[0],db50MostCommonsWordsSpanish)){
-                    flag=false;
+                for (int i = 0; i <blocktoCompare.length ; i++) {
+                    if(DBCommonsWords.CompareWords(blocktoCompare[i],db50MostCommonsWordsSpanish)){
+                        flag=false;
+                    }
                 }
-                iteratorBruteForce++;
+
+
             }
 
 

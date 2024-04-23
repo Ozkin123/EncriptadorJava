@@ -70,7 +70,7 @@ public class Menu {
                   System.out.println();
                   System.out.println("Operacion realizada gracias");
 
-                  option =3;
+                  option =4;
                   break;
 
               case 2:
@@ -80,11 +80,17 @@ public class Menu {
                   System.out.println();
                   System.out.println("Operacion realizada gracias");
 
-                  option=3;
+                  option=4;
+                  break;
+
+              case 3:
+                  showMenu();
+
+                  option=4;
                   break;
           }
 
-      }while (option!=3);
+      }while (option!=4);
   }
 
 }

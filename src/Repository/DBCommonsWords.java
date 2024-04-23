@@ -2,7 +2,7 @@ package Repository;
 
 public class DBCommonsWords {
 
-    public static String[] db50MostCommonsWordsSpanish = {"que", "con", "por", "para", "una", "como", "sobre","archivo", "pruebas","este","Este"};
+    public static String[] db50MostCommonsWordsSpanish = {"que", "con", "por", "para", "una", "como", "sobre","archivo", "pruebas","este"};
 
 
     public static boolean CompareWords(String toCompare, String[] dbWords) {
