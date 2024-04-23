@@ -1,7 +1,7 @@
 package Service;
 
 import Repository.DBCommonsWords;
-import static Repository.DBCommonsWords.db50MostCommonsWordsSpanish;
+import static Repository.DBCommonsWords.dbMostCommonsWordsSpanish;
 
 import java.io.*;
 
@@ -47,7 +47,7 @@ public class Decryption {
 
                 String [] blocktoCompare=block.split(" ");
                 for (int i = 0; i <blocktoCompare.length ; i++) {
-                    if(DBCommonsWords.CompareWords(blocktoCompare[i],db50MostCommonsWordsSpanish)){
+                    if(DBCommonsWords.CompareWords(blocktoCompare[i],dbMostCommonsWordsSpanish)){
                         flag=false;
                     }
                 }

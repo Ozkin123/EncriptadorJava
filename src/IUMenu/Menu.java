@@ -45,24 +45,26 @@ public class Menu {
   }
 
   public static void showMenuDecrypt(){
-      int option=0;
-      Scanner scanner = new Scanner(System.in);
+      int optionMenuDecrypt=0;
+      Scanner scannerDecrypt = new Scanner(System.in);
       do {
           System.out.println("Digite una opcion");
           System.out.println("1. Desencriptar con password");
           System.out.println("2. Desencriptar por fuerzaBruta");
-          System.out.println("3. Salir");
+          System.out.println("3. Regresar");
+          System.out.println("4. Salir");
 
 
           try {
-              option = scanner.nextInt();
+              optionMenuDecrypt = scannerDecrypt.nextInt();
           }catch (Exception e){
               System.out.println("***********************");
               System.out.println("Elige una opcion valida");
               System.out.println("***********************");
               showMenu();
           }
-          switch (option){
+
+          switch (optionMenuDecrypt){
               case 1:
                   System.out.println("Digite texto a desencriptar");
                   ManageFile.selectDocumentByUserToDecrypt();
@@ -70,7 +72,7 @@ public class Menu {
                   System.out.println();
                   System.out.println("Operacion realizada gracias");
 
-                  option =4;
+                  optionMenuDecrypt =4;
                   break;
 
               case 2:
@@ -79,18 +81,19 @@ public class Menu {
                   System.out.println();
                   System.out.println();
                   System.out.println("Operacion realizada gracias");
-
-                  option=4;
+                  optionMenuDecrypt=4;
                   break;
 
               case 3:
                   showMenu();
 
-                  option=4;
+                  optionMenuDecrypt=4;
                   break;
           }
 
-      }while (option!=4);
+
+      }while (optionMenuDecrypt!=4);
+
   }
 
 }

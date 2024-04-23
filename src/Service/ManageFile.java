@@ -44,19 +44,19 @@ public class ManageFile {
         }catch (Exception e){
             System.out.println("no exixte documento");
             System.out.println("digite nuevamente");
-            selectDocumentByUserToDecrypt();
+            selectDocumentByUserToDecryptByForceBrute();
         }
     }
 
 
 
     public static int passwordSelectedByUser(){
-        System.out.println("digite una clave del 1 al 100 para encriptar");
+        System.out.println("digite una clave del 1 al 9 para encriptar");
         Scanner scanner = new Scanner(System.in);
         int password=1;
         try {
             password = scanner.nextInt();
-            if(password<1||password>100){
+            if(password<1||password>9){
                 System.out.println("digite clave dentro del rango");
                 passwordSelectedByUser();
             }
