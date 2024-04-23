@@ -1,5 +1,7 @@
 package Service;
 
+import Repository.DBCommonsWords;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -18,6 +20,18 @@ public class Decryption {
                 buffer[i]= (char) (buffer[i]-7);
                 System.out.print(buffer[i]);
             }
+
+            String block="";
+
+            for (int i = 0; i < buffer.length; i++) {
+                block+=buffer[i];
+            }
+            String [] wordToCompare = block.split(" ");
+
+            System.out.println(DBCommonsWords.CompareWords(wordToCompare[0],DBCommonsWords.db50MostCommonsWordsSpanish));
+
+
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
