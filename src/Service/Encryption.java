@@ -30,23 +30,7 @@ public class Encryption {
 
     }
 
-    public static int passwordSelectedByUser(){
-        System.out.println("digite una clave del 1 al 100 para encriptar");
-        Scanner scanner = new Scanner(System.in);
-        int password=1;
-        try {
-            password = scanner.nextInt();
-            if(password<1||password>100){
-                System.out.println("digite clave dentro del rango");
-                passwordSelectedByUser();
-            }
-        }catch (RuntimeException e){
-            System.out.println("Digite clave valida");
-            passwordSelectedByUser();
-        }
 
-      return password;
-    }
 
 
 

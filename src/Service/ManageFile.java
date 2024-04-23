@@ -11,7 +11,7 @@ public class ManageFile {
         int password;
         try {
             selectedDocument = sc.nextLine();
-            password= Encryption.passwordSelectedByUser();
+            password= ManageFile.passwordSelectedByUser();
             Encryption.encryptFile(selectedDocument,password);
         }catch (Exception e){
             System.out.println("no exixte documento");
@@ -23,14 +23,49 @@ public class ManageFile {
     public static void selectDocumentByUserToDecrypt(){
         Scanner sc = new Scanner(System.in);
         String selectedDocument;
+        int password;
         try {
             selectedDocument = sc.nextLine();
-            Decryption.decryptFile(selectedDocument);
+            password=passwordSelectedByUser();
+            Decryption.decryptFile(selectedDocument,password);
         }catch (Exception e){
             System.out.println("no exixte documento");
             System.out.println("digite nuevamente");
             selectDocumentByUserToDecrypt();
         }
+    }
+
+    public static void selectDocumentByUserToDecryptByForceBrute(){
+        Scanner sc = new Scanner(System.in);
+        String selectedDocument;
+        try {
+            selectedDocument = sc.nextLine();
+            Decryption.decryptByBruteForce(selectedDocument);
+        }catch (Exception e){
+            System.out.println("no exixte documento");
+            System.out.println("digite nuevamente");
+            selectDocumentByUserToDecrypt();
+        }
+    }
+
+
+
+    public static int passwordSelectedByUser(){
+        System.out.println("digite una clave del 1 al 100 para encriptar");
+        Scanner scanner = new Scanner(System.in);
+        int password=1;
+        try {
+            password = scanner.nextInt();
+            if(password<1||password>100){
+                System.out.println("digite clave dentro del rango");
+                passwordSelectedByUser();
+            }
+        }catch (RuntimeException e){
+            System.out.println("Digite clave valida");
+            passwordSelectedByUser();
+        }
+
+        return password;
     }
 
 
