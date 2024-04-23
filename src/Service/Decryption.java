@@ -14,7 +14,7 @@ public class Decryption {
             reader.read(buffer);
 
 
-            for (int i = 0; i <buffer.length-1 ; i++) {
+            for (int i = 0; i <buffer.length ; i++) {
                 buffer[i]= (char) (buffer[i]-7);
                 System.out.print(buffer[i]);
             }

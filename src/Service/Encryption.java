@@ -9,7 +9,7 @@ import Service.ManageFile;
 
 public class Encryption {
 
-    public static void encryptFile(String document) {
+    public static void encryptFile(String document, int password) {
         File file = new File(document);
         try(FileReader reader = new FileReader(file);
             FileWriter writer = new FileWriter("Encriptado.txt")){
@@ -18,7 +18,7 @@ public class Encryption {
             reader.read(buffer);
 
             for (int i = 0; i <buffer.length ; i++) {
-                buffer[i]= (char) (buffer[i]+7);
+                buffer[i]= (char) ((buffer[i])+password);
             }
 
             writer.write(buffer);
@@ -28,6 +28,24 @@ public class Encryption {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public static int passwordSelectedByUser(){
+        System.out.println("digite una clave del 1 al 100 para encriptar");
+        Scanner scanner = new Scanner(System.in);
+        int password=1;
+        try {
+            password = scanner.nextInt();
+            if(password<1||password>100){
+                System.out.println("digite clave dentro del rango");
+                passwordSelectedByUser();
+            }
+        }catch (RuntimeException e){
+            System.out.println("Digite clave valida");
+            passwordSelectedByUser();
+        }
+
+      return password;
     }
 
 
